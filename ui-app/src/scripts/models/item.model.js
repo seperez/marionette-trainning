@@ -1,21 +1,13 @@
-App.module('Example.Models', function(Models, App, Backbone, Marionette, $, _) {
+App.module('Example.Models', function(Models, App, Backbone, Marionette, $, _){
 
     Models.Item = Backbone.Model.extend({
-        // 'urlRoot': '/',
-        // 'idAttribute': 'itemId',
 
-        'defaults': {
-            'title': null,
-            'price': 'A convenir',
-            'quantity': 1
-        },
+        idAttribute: 'itemId',
 
-        initialize: function() {
-            // do something
-        },
-
-        methodCustom: function() {
-
+        defaults: {
+            title: '',
+            price: 0,
+            quantity: 0
         }
     });
 });

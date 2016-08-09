@@ -26,8 +26,9 @@ exports.scripts = [
 
     // Views
     'src/scripts/views/item.item.view.js',
-    'src/scripts/views/search.layout.view.js',
+    'src/scripts/views/items.collection.view.js',
     'src/scripts/views/controls.item.view.js',
+    'src/scripts/views/search.layout.view.js',
 
     //
     'src/scripts/modules/router.module.js'

@@ -1,9 +1,6 @@
-'use strict';
+App.module('Example', function(Example, App, Backbone, Marionette, $, _){
 
-App.module('Example', function (Example, App, Backbone, Marionette, $, _) {
-
-    Example.addInitializer(function(){
+    Example.onStart = function(){
         new App.Example.Router();
-    });
-
+    }
 });
