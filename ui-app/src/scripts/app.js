@@ -13,7 +13,7 @@
 
     // Subscribe to "start" application event
     App.on('start', function() {
-        Backbone.history.start({'pushState': true});
+        Backbone.history.start();
     });
 
     // Export Application

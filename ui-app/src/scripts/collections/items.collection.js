@@ -1,11 +1,11 @@
 App.module('Example.Collections', function(Collections, App, Backbone, Marionette, $, _){
-    'use strict';
 
     Collections.Items = Backbone.Collection.extend({
-        url: function(){
-            var siteId = 'MLA';
-            return 'https://api.mercadolibre.com/sites/' + siteId + '/search';
-        },
+        // url: function(){
+        //     return 'https://api.mercadolibre.com/sites/' + App.Config.siteId + '/search';
+        // },
+
+        'url': 'https://api.mercadolibre.com/sites/MLA/search',
 
         'model': App.Example.Models.Item,
 

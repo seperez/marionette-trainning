@@ -1,10 +1,6 @@
-App.module('Example.Views', function(Views, App, Backbone, Marionette, $, _){
-    'use strict';
+App.module('Example.Views', function(Views, App, Backbone, Marionette, $, _) {
 
     Views.Search = Marionette.LayoutView.extend({
-        // tagName: 'ul',
-        // className: 'foo bar',
-
         template: App.Example.templates.search,
 
         ui: {
@@ -17,16 +13,19 @@ App.module('Example.Views', function(Views, App, Backbone, Marionette, $, _){
             'results': '@ui.results'
         },
 
-        onShow: function(){
-            var controlsView = new Views.Controls();
+        onShow: function () {
+            var items = new App.Example.Collections.Items();
+
+            var controlsView = new Views.Controls({
+                collection: items
+            });
             this.getRegion('controls').show(controlsView);
 
-            var itemsCollection = new Example.Collections.Items();
-            var resultsView = new Views.Results({
-                collection: itemsCollection
+            var itemsView = new Views.Items({
+                collection: items
             });
-
-            show(resultsView);
+            this.getRegion('results').show(itemsView);
         }
+
     });
 });

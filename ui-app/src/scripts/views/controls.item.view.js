@@ -9,12 +9,25 @@ App.module('Example.Views', function(Views, App, Backbone, Marionette, $, _) {
         },
 
         events: {
-            'click @ui.search': 'search'
+            'click @ui.search': 'handleSearch',
+            'input @ui.query': 'handleSearch',
         },
 
-        search: function(event){
+        handleSearch: function(event){
             event.preventDefault();
-            alert('buscando: ' + this.ui.query.val());
+            this.search();
+        },
+
+        search: function(){
+            var query = this.ui.query.val();
+
+            var p = this.collection.fetch({
+                data: {
+                    q: query
+                }
+            }).then(function(response){
+                console.log('response', response);
+            });
         }
 
     });
